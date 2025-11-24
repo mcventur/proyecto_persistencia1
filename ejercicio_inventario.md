@@ -51,8 +51,10 @@ Si algo falla → descarta la línea y registra el error en una lista.
 
 Ejemplo de diccionario final:
 
-\`\`\`python { "nombre": "srv-web01", "ip": "192.168.1.10", "sistema":
-"linux", "ubicacion": "sala 1", "responsable": "Ana" } \`\`\`
+```python
+{ "nombre": "srv-web01", "ip": "192.168.1.10", "sistema":
+"linux", "ubicacion": "sala 1", "responsable": "Ana" }
+```
 
 ### 5 - Escribir en un fichero informe_servidores.txt un informe resumen
 Escribir en el fichero de salida los siguientes datos, uno por línea
