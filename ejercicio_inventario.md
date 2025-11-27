@@ -33,6 +33,8 @@ Implementa un script en Python que:
 -   Convierte **responsable** para que empiece en mayúscula (solo
     primera letra).
     -   Ejemplo: `ana` → `Ana`.
+-   **ubicacion** → puede estar vacía, pero se normaliza a `None`\
+-   **responsable** → puede ser `"-"` o estar vacía → se pasa a `None`
 
 ### 3 - Valide los datos
 
@@ -41,9 +43,7 @@ Para cada línea procesada, verifica:
 -   **nombre** → obligatorio, string no vacío\
 -   **ip** → válida en formato IPv4 (puedes usar `split` o el módulo
     `ipaddress`)\
--   **sistema operativo** → uno de: `linux`, `windows`, `macos`\
--   **ubicacion** → puede estar vacía, pero se normaliza a `None`\
--   **responsable** → puede ser `"-"` → se pasa a `None`
+-   **sistema operativo** → uno de: `linux`, `windows`, `macos`. Es un dato obligatorio. 
 
 Si algo falla → descarta la línea y registra el error en una lista.
 
