@@ -26,15 +26,16 @@ Implementa un script en Python que:
 -   Ignora líneas que empiezan con `#`.
 
 ### 2 - Normalice cada línea
+Homegeniza cada línea almacenándola en un diccionario de Python, sin realizar validaciones. 
 
 -   Acepta tanto `;` como `,` como separadores.\
 -   Elimina espacios de más.\
--   Pasa **sistema operativo** a minúsculas.\
+-   Pasa **sistema operativo** a minúsculas. Si no está en la línea\
 -   Convierte **responsable** para que empiece en mayúscula (solo
     primera letra).
     -   Ejemplo: `ana` → `Ana`.
--   **ubicacion** → puede estar vacía, pero se normaliza a `None`\
--   **responsable** → puede ser `"-"` o estar vacía → se pasa a `None`
+- Rellena cualquier campo faltante con "" hasta completar las 5 claves obligatorias   
+
 
 ### 3 - Valide los datos
 
@@ -43,7 +44,9 @@ Para cada línea procesada, verifica:
 -   **nombre** → obligatorio, string no vacío\
 -   **ip** → válida en formato IPv4 (puedes usar `split` o el módulo
     `ipaddress`)\
--   **sistema operativo** → uno de: `linux`, `windows`, `macos`. Es un dato obligatorio. 
+-   **sistema operativo** → uno de: `linux`, `windows`, `macos`. Es un dato obligatorio.
+-   **ubicacion** → puede estar vacía, pero se normaliza a `None`\
+-   **responsable** → puede ser `"-"` o estar vacía → se pasa a `None`   
 
 Si algo falla → descarta la línea y registra el error en una lista.
 
@@ -103,11 +106,12 @@ lineas = ["srv-web01 ; 192.168.1.10 ; linux ; sala 1 ; Ana", ...]
 - Una línea de texto
 
 **Acción:**  
-- Reemplaza separadores `;` o `,` por un separador uniforme  
-- Elimina espacios de más  
-- Convierte `sistema` a minúsculas  
-- Capitaliza `responsable` (Ana, Carlos…)  
-- Devuelve la línea como diccionario preliminar
+- Reemplaza separadores `;` o `,` por un separador uniforme para separar los datos individuales de la línea 
+- Elimina espacios de más   
+- Almacena el `sistema`en minúsculas  
+- Capitaliza `responsable` (Ana, Carlos…)
+- Si falta cualquier dato lo almacena como una cadena vacía
+- Devuelve la línea como diccionario preliminar. 
 
 **Salida (ejemplo):**
 ```
